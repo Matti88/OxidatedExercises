@@ -8,11 +8,7 @@ HTTP Eco Server and Client
 Snippest of code for writing a simple text file. From Website: https://rust-lang-nursery.github.io/rust-cookbook/basics.html#ex-std-read-lines
 
 ```Rust
-// From the WebSite
-fn run() -> Result<()> {
-    let path = "lines.txt";
-
-// Personal Correction
+// Manually inserted Error Handling
 fn run() -> Result<(), Error> {
     let path = "lines.txt";
 ```
