@@ -10,5 +10,19 @@ Snippest of code for writing a simple text file. From Website: https://rust-lang
 ```Rust
 // Manually inserted Error Handling
 fn run() -> Result<(), Error> {
-    let path = "lines.txt";
+    let path = "lines.txt";
 ```
+
+### Rust2Python
+Using Cpython crate to create first library to use within python
+
+```Rust
+// The triky part resides here: all the functions mst be initialized one by one.
+py_module_initializer!(librust2py, initlibrust2py, PyInit_librust2py, |py, m| {
+    try!(m.add(py, "__doc__", "This module is implemented in Rust."));
+    try!(m.add(py, "sum_as_string", py_fn!(py, sum_as_string_py(a: i64, b:i64))));
+    try!(m.add(py, "subtrazion_as_string", py_fn!(py, subtrazion_as_string_py(a: i64, b:i64))));
+    Ok(())
+});
+```
+
