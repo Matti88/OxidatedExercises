@@ -1,0 +1,12 @@
+[package]
+name = "send_pict_http"
+version = "0.1.0"
+authors = ["mmontanari"]
+
+[lib]
+name = "rust2py"
+crate-type = ["cdylib"]
+
+[dependencies.cpython]
+version = "0.1"
+features = ["extension-module"]
